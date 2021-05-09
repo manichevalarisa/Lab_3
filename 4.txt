@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+
+int palyndrome(char str[])
+
+{
+    char *start = &str[0];
+    int h = strlen(str) - 1;
+    char *end = &str[h];
+    int answ = 1;
+
+   for (int i = 0; i < h; i++) {
+       if (*start++ != *end--) {
+           answ = 0;
+       };
+
+   };
+    return (answ);
+};
+
+int main()
+
+{
+
+    int test1 = palyndrome("pt tp");
+    int test2 = palyndrome("xox6 6xox");
+    int test3 = palyndrome("navorovan");
+    printf ("%i\n", test1);
+    printf ("%i\n", test2);
+    printf ("%i\n", test3);
+    return 0;
+
+}

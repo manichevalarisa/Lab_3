@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+int main() {
+    char start = 'A';
+    char end = 'Z';
+    int size = (int)end - (int)start;
+    char *alphabet = (char *)malloc(size * sizeof(char));
+    for (int i = 0; i <= size; i++) {
+        *(alphabet +i) = (char)(i + (int)start);
+    }
+    char *reverse = (char *)malloc(size * sizeof(char));
+    for (int i = 0; i <= size; i++) {
+        *(reverse + i) = (char)((int)end - i);
+    }
+}

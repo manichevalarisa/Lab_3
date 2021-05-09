@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <string.h>
+
+int sublist(int mas1[], int mas2[])
+
+{
+    int *mas1_1 = mas1;
+    int *mas1_2 = mas2;
+    int size1 = sizeof(mas1)/sizeof(mas1[0]);
+    int size2 = sizeof(mas2)/sizeof(mas2[0]);
+    int answ = -1;
+    for (int i = 0; i <= size2; i++) {
+        if (*mas1_1 == *(mas1_2+i)) {
+            answ = 1;
+        }
+    };
+     for (int i = 0; i <= size1; i++) {
+        if (*(mas1_1+i) == *mas1_2) {
+            answ = 2;
+        }
+    };
+    if (size1 == size2) {
+        for (int i = 0; i <= size1; i++) {
+            if ((*mas1_1+i) == *(mas1_2+i)) {
+                answ = 0;
+            }
+        }
+    }
+    return (answ);
+};
+
+int main()
+
+{
+    int mas1_1[3]={4,5,6};
+    int mas1_2[3]={4,5,6};
+    int mas2_1[4]={3,4,5,6};
+    int mas2_2[3]={4,5,6};
+    int mas3_1[3]={4,5,6};
+    int mas3_2[4]={3,4,5,6};
+    int mas4_1[1]={1,9,5,10,12,4};
+    int mas4_2[4]={9,5,10,1};
+    int test1 = sublist(mas1_1, mas1_2);
+    int test2 = sublist(mas2_1, mas2_2);
+    int test3 = sublist(mas3_1, mas3_2);
+    int test4 = sublist(mas4_1, mas4_2);
+    printf ("%i\n", test1);
+    printf ("%i\n", test2);
+    printf ("%i\n", test3);
+    printf ("%i\n", test4);
+}

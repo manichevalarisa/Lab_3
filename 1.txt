@@ -1,0 +1,26 @@
+#include <stdio.h>
+    int last_index_of (int list[4], int a) {
+        int idx = 0;
+        int *t = list;
+        for(int q = 0; q < 5; q++) {
+            if (*t == a) {
+                idx = q;
+            };
+            *t++;
+        };
+        return (idx);
+    };
+int main()
+{
+    int test1[5] = {10, 15, 20, 25, 20};
+    int test2[5] = {1, 2, 3, 4, 5};
+    int test3[5] = {3, 3, 3, 3, 3};
+   int test11 = last_index_of(test1, 20);
+   int test21 = last_index_of(test2, 2);
+   int test31 = last_index_of(test3, 3);
+   printf ("%i \n", test11);
+   printf ("%i \n", test21);
+   printf ("%i \n", test31);
+   
+   
+}
